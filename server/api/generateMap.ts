@@ -2,7 +2,7 @@ export default defineEventHandler((_event) => {
   const settings = {
     height: 16,
     width: 16,
-    finish: 250,
+    finish: 238, // id финальной клетки
     direction: 'row',
   };
   const map = [...generateMap()];
