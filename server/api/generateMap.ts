@@ -5,6 +5,7 @@ export default defineEventHandler((_event) => {
     const settings = {
         height: 16,
         width: 16,
+        finish: 250,
         direction: 'row',
     }
     const map = [...generateMap()]
@@ -18,7 +19,7 @@ export default defineEventHandler((_event) => {
                 id: i,
                 x,
                 y,
-                closed: false,
+                closed: Math.random() < 0.1,
             })
             x++;
             if(x === settings.width) {

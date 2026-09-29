@@ -8,14 +8,23 @@ const gridStyle = computed(() => ({
   gridTemplateColumns: `repeat(${data.value?.meta.width}, 72px)`,
 }))
 
-const { charCoords } = useCharacter()
-
+const { charCoords, move } = useCharacter(data)
+useKeys({
+  h: () => move(-1, 0),
+  l: () => move(1, 0),
+  j: () => move(0, 1),
+  k: () => move(0, -1),
+})
 </script>
 
 <template>
   <div class="p-8 w-full min-h-screen flex justify-center items-center">
     <div :style="gridStyle" v-if="data?.data">
-      <grid-cell v-for="item of data?.data" :item :is-character="charCoords.x === item.x && charCoords.y === item.y"/>
+      <grid-cell
+          v-for="item of data?.data"
+          :item="item"
+          :is-character="charCoords.x === item.x && charCoords.y === item.y"
+          :finish="item.id === data.meta.finish"/>
     </div>
   </div>
 </template>
