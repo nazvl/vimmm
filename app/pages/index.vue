@@ -4,7 +4,7 @@
   <div class="flex items-center justify-center">
     <NuxtLink
       to="game"
-      class="rounded-xl border bg-blue-600 px-6 py-2 text-xl text-white shadow-md transition hover:bg-blue-700"
+      class="rounded-xl border bg-green-700 px-6 py-2 text-xl text-white shadow-md transition hover:bg-green-800"
       >Play</NuxtLink
     >
   </div>

@@ -29,7 +29,7 @@ export function useCharacter(data: Ref<any | null>) {
     return data.value?.data?.find((c) => c.id === data.value.meta.finish);
   });
   watch(
-    charCoords,
+    () => charCoords.value,
     () => {
       if (charCoords.value.x === finish.value?.x && charCoords.value.y === finish.value?.y) {
         alert('You won!');
